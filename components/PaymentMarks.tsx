@@ -1,11 +1,16 @@
-export function PaymentMarks({ light = false }: { light?: boolean }) {
-  const base = light ? 'border-char-900 text-char-900' : 'border-cream/60 text-cream';
+/* eslint-disable @next/next/no-img-element */
+export function PaymentMarks({ light = false, size = 'footer' }: { light?: boolean; size?: 'footer' | 'checkout' }) {
+  const h = size === 'checkout' ? 'h-8' : 'h-7';
+  const chip = `${light ? 'border-char-900/30' : 'border-cream/60'} border bg-white px-2.5 ${h} flex items-center gap-2`;
+  const img = size === 'checkout' ? 'h-[22px]' : 'h-[18px]';
   return (
-    <div className="flex items-center gap-2" aria-label="Accepted payment: Visa and Mastercard">
-      <span className={`border ${base} px-3 py-1 font-display italic tracking-widest text-sm`}>VISA</span>
-      <span className={`border ${base} px-3 py-1 font-display tracking-wider text-sm flex items-center gap-1.5`}>
-        <span className="inline-flex"><i className="w-3.5 h-3.5 rounded-full bg-red-600 block" /><i className="w-3.5 h-3.5 rounded-full bg-amber-500 block -ml-1.5 opacity-90" /></span>
-        Mastercard
+    <div className="flex flex-wrap items-center gap-2" aria-label="Accepted payment: Visa and Mastercard">
+      <span className={chip}>
+        <img src="/images/payments/visa.png" alt="Visa" height={22} className={`${img} w-auto`} />
+      </span>
+      <span className={chip}>
+        <img src="/images/payments/mastercard.png" alt="Mastercard" height={22} className={`${img} w-auto`} />
+        <span className="text-char-900 text-xs font-medium tracking-wide">Mastercard</span>
       </span>
     </div>
   );

@@ -96,7 +96,7 @@ export default function CheckoutPage() {
             <legend className="sr-only">Payment</legend>
             <div className="sm:col-span-3 flex items-center justify-between flex-wrap gap-3">
               <h2 className="h-display text-2xl text-copper-light">Payment</h2>
-              <PaymentMarks />
+              <PaymentMarks size="checkout" />
             </div>
             <div className="sm:col-span-3"><label className="label" htmlFor="card">Card number (Visa or Mastercard)</label><input id="card" name="card" required inputMode="numeric" placeholder="1234 5678 9012 3456" className="field" autoComplete="cc-number" /></div>
             <div><label className="label" htmlFor="exp">Expiry (MM/YY)</label><input id="exp" name="exp" required pattern="(0[1-9]|1[0-2])\/\d{2}" placeholder="MM/YY" className="field" autoComplete="cc-exp" /></div>
