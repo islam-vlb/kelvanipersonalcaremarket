@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { @apply bg-char-900 text-cream font-body antialiased; }
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-7xl px-5 sm:px-8; }
+  .h-display { @apply font-display uppercase tracking-wide leading-[0.95]; }
+  .eyebrow { @apply font-display uppercase tracking-[0.28em] text-copper-light text-sm; }
+  .btn { @apply inline-flex items-center justify-center gap-2 bg-copper text-char-950 font-display uppercase tracking-widest px-7 py-3.5 text-base transition-colors duration-200 hover:bg-copper-light disabled:opacity-40 disabled:cursor-not-allowed rounded-none border-2 border-copper; }
+  .btn-ghost { @apply inline-flex items-center justify-center gap-2 bg-transparent text-cream font-display uppercase tracking-widest px-7 py-3.5 text-base border-2 border-cream/50 transition-colors duration-200 hover:border-copper hover:text-copper-light rounded-none; }
+  .card { @apply bg-char-800 border border-char-600 rounded-none transition-all duration-200 hover:border-copper; }
+  .field { @apply w-full bg-char-950 border border-char-600 text-cream px-4 py-3 rounded-none focus:outline-none focus:border-copper placeholder:text-cream/40; }
+  .label { @apply block font-display uppercase tracking-widest text-xs text-copper-light mb-1.5; }
+  .section { @apply py-16 sm:py-24; }
+  .prose-legal h2 { @apply font-display uppercase tracking-wide text-2xl text-copper-light mt-10 mb-3; }
+  .prose-legal p, .prose-legal li { @apply text-cream/85 leading-relaxed; }
+  .prose-legal p { @apply mb-4; }
+  .prose-legal ul { @apply list-disc pl-6 mb-4 space-y-1; }
+  .prose-legal a { @apply text-copper-light underline; }
+  .diag-bottom { clip-path: polygon(0 0, 100% 0, 100% calc(100% - 56px), 0 100%); }
+  .diag-top { clip-path: polygon(0 56px, 100% 0, 100% 100%, 0 100%); }
+  .diag-both { clip-path: polygon(0 56px, 100% 0, 100% calc(100% - 56px), 0 100%); }
+}
+@media (max-width: 640px) {
+  .diag-bottom { clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), 0 100%); }
+  .diag-top { clip-path: polygon(0 28px, 100% 0, 100% 100%, 0 100%); }
+  .diag-both { clip-path: polygon(0 28px, 100% 0, 100% calc(100% - 28px), 0 100%); }
+}
